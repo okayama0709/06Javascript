@@ -1,2 +1,4 @@
-# 06Javascript
- 2023Javascript基礎　授業課題
+# 2023 年「Javascript 基礎」　授業課題
+
+##　授業内コード
+１０月５日（水）はじめの一歩
