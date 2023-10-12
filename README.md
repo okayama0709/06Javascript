@@ -6,7 +6,7 @@
 
 -リテラル演算子
 
-## 文字列の計算
+### 文字列の計算
 
 ```js
 console.log("トライデントコンピューター専門学校\nWeb デザイン学科"); //文字型リテラル
@@ -29,37 +29,36 @@ console.log("2" - 1); //文字列ー数値
 console.log(`${result}123+456`);
 ```
 
-## 変数と定数と複合演算子
+### 変数と定数と複合演算子
 
-```````js
- //   変数
-    let a; //変数の宣言
-    a = 10; //代入
-    console.log(a);
+```js
+//   変数
+let a; //変数の宣言
+a = 10; //代入
+console.log(a);
 
-      a = "Hello"; //文字列型
-      console.log(a);
+a = "Hello"; //文字列型
+console.log(a);
 
-      //let a = "World";　できない
+//let a = "World";　できない
 
-      //定数の宣言
-      const PI = 3.14;
-      console.log(PI);
+//定数の宣言
+const PI = 3.14;
+console.log(PI);
 
-      //複合代入演算子
-      let n = 5;
-      n = n + 5;
-      console.log(n);
+//複合代入演算子
+let n = 5;
+n = n + 5;
+console.log(n);
 
-      let n2 = 5;
-      n2 += 2; //複合代入演算子
-      console.log(n2);
-      //インクリメント
-      let n3 = 5;
-      n3++;
-      console.log(n3);
-      ``````
-
+let n2 = 5;
+n2 += 2; //複合代入演算子
+console.log(n2);
+//インクリメント
+let n3 = 5;
+n3++;
+console.log(n3);
+```
 
 ## 10 月 5 日
 
@@ -78,18 +77,18 @@ console.log(`${result}123+456`);
 基本は、外部 JS ファイルを読み込むが、HTML 内に各場合は、`</body>`の上に書く。
 
 ```html
-<!doctype html>
-<html lang=ja>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>演習</title>
-</head>
-<body>
-</script>
-</body>
+  </head>
+  <body>
+    <script></script>
+  </body>
 </html>
-```````
+```
 
 ### フロントエンドロードマップ
 
