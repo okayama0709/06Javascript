@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>演算子と型</title>
+  </head>
+  <body>
+    <script>
+      console.log("トライデントコンピューター専門学校\nWebデザイン学科"); //文字型リテラル
+      console.log(456); //数値型リテラル
+      console.log("123"); //文字列
+      console.log(`トライデントコンピューター専門学校
+      Webデザイン学科
+      岡山`);
+
+      // 文字列の連結
+      const result = "計算結果";
+      console.log("ABC" + "EFG");
+
+      console.log("円周率は" + 3.14 + "です"); //文字列と文字列
+      console.log("計算結果" + 123 + 456); //文字列と数値
+      console.log(123 + 456 + "となりました"); //数値計算＋文字列
+      console.log("計算結果" + (123 + 456)); //文字列＋（数値）
+      console.log("2" - 1); //文字列ー数値
+
+      console.log(`${result}123+456`);
+
+      //   変数
+      let a; //変数の宣言
+      a = 10; //代入
+      console.log(a);
+
+      a = "Hello"; //文字列型
+      console.log(a);
+
+      //let a = "World";　できない
+
+      //定数の宣言
+      const PI = 3.14;
+      console.log(PI);
+
+      //複合代入演算子
+      let n = 5;
+      n = n + 5;
+      console.log(n);
+
+      let n2 = 5;
+      n2 += 2; //複合代入演算子
+      console.log(n2);
+      //インクリメント
+      let n3 = 5;
+      n3++;
+      console.log(n3);
+    </script>
+  </body>
+</html>
