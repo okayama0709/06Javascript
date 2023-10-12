@@ -4,29 +4,35 @@
 
 ## 10 月 12 日
 
--リテラル演算子
+###　要素の取得
 
-### 文字列の計算
+```html
+<body>
+  <h1>果物の種類</h1>
+  <ul id="fruitslist" class="listbox__list">
+    <li>りんご</li>
+    <li>みかん</li>
+    <li>バナナ</li>
+  </ul>
+  <!--リストを操作するDOM操作のスクリプト-->
+  <script>
+    //メロンを加えたい
+    const element = document.querySelector("ul");
+    console.log(element);
 
-```js
-console.log("トライデントコンピューター専門学校\nWeb デザイン学科"); //文字型リテラル
-console.log(456); //数値型リテラル
-console.log("123"); //文字列
-console.log(`トライデントコンピューター専門学校
-Web デザイン学科
-岡山`);
+    //selecterってCSSのセレクターなので、
+    const element2 = document.querySelector("#fruitslist");
+    console.log(element2);
 
-// 文字列の連結
-const result = "計算結果";
-console.log("ABC" + "EFG");
+    const element3 = document.querySelector(".listbox__list");
+    console.log(element3);
 
-console.log("円周率は" + 3.14 + "です"); //文字列と文字列
-console.log("計算結果" + 123 + 456); //文字列と数値
-console.log(123 + 456 + "となりました"); //数値計算＋文字列
-console.log("計算結果" + (123 + 456)); //文字列＋（数値）
-console.log("2" - 1); //文字列ー数値
-
-console.log(`${result}123+456`);
+    const lilast = document.createElement("li");
+    console.dir(lilast); //dirでプロパティを表示
+    lilast.textContent = "メロン";
+    console.log(lilast);
+  </script>
+</body>
 ```
 
 ### 変数と定数と複合演算子
@@ -58,6 +64,31 @@ console.log(n2);
 let n3 = 5;
 n3++;
 console.log(n3);
+```
+
+-リテラル演算子
+
+### 文字列の計算
+
+```js
+console.log("トライデントコンピューター専門学校\nWeb デザイン学科"); //文字型リテラル
+console.log(456); //数値型リテラル
+console.log("123"); //文字列
+console.log(`トライデントコンピューター専門学校
+Web デザイン学科
+岡山`);
+
+// 文字列の連結
+const result = "計算結果";
+console.log("ABC" + "EFG");
+
+console.log("円周率は" + 3.14 + "です"); //文字列と文字列
+console.log("計算結果" + 123 + 456); //文字列と数値
+console.log(123 + 456 + "となりました"); //数値計算＋文字列
+console.log("計算結果" + (123 + 456)); //文字列＋（数値）
+console.log("2" - 1); //文字列ー数値
+
+console.log(`${result}123+456`);
 ```
 
 ## 10 月 5 日
