@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>人気フルーツ一覧</h1>
+    <ul id="fruitslist" class="listbox__list"></ul>
+    <script>
+      const element = document.querySelector("ul"); //ul取得
+      const fruits = ["りんご", "もも", "バナナ"]; //配列を定数に入れる
+      console.log(fruits.length); //確認
+      for (let i = 0; i < fruits.length; i++) {
+        //li要素を作成
+        const liLast = document.createElement("li");
+        //配列要素をliに代入
+        liLast.textContent = fruits[i];
+        //ul内の最後に追加
+        element.appendChild(liLast);
+      }
+    </script>
+  </body>
+</html>

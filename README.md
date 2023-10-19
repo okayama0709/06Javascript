@@ -2,6 +2,30 @@
 
 ##　授業内コード
 
+## 10 　月　１ 9 日
+
+###　 for 文
+
+```js
+const element = document.querySelector("ul"); //ul取得
+const fruits = ["りんご", "もも", "バナナ"]; //配列を定数に入れる
+console.log(fruits.length); //確認
+for (let i = 0; i < fruits.length; i++) {
+  //li要素を作成
+  const liLast = document.createElement("li");
+  //配列要素をliに代入
+  liLast.textContent = fruits[i];
+  //ul内の最後に追加
+  element.appendChild(liLast);
+}
+```
+
+###　配列
+
+```js
+const name_list = ["松田", "田中", "中山", "山本", "本田"];
+```
+
 ## 10 月 12 日
 
 ###　要素の取得

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <dl class="recipe">
+      <dt>カップヌードルの作り方</dt>
+      <dd>フタを途中まで開ける</dd>
+      <dd>お湯を線まで入れてフタをする</dd>
+    </dl>
+
+    <script>
+      const dl = document.querySelector("dl"); //dlを取得
+      const ddlas = document.createElement("dd"); //ddのエレメントを追加
+
+      ddlas.textContent = "3分待ってできあがり"; //追加したエレメントに文章を追加
+      dl.appendChild(ddlas); //dlにddを追加
+
+      const kk = document.querySelector(".recipe");
+      const hairetu = ["メトン", "オプション"];
+      console.log(hairetu);
+      console.log(`これは${hairetu[1]}練習です`);
+
+      //配列授業演習
+      //fruitsの配列
+      const animals = ["dog", "cat", "bird"];
+      console.log(animals[1]);
+      //配列要素の数
+      console.log(animals.length);
+
+      //for文演習
+      for (let i = 1; i < 10; i++) {
+        console.log(i); //0から8が表示されます。
+        //このiを使って7の段をコンソールに表示させてください。
+        console.log(`7 × ${i} = ${i * 7}`);
+      }
+    </script>
+  </body>
+</html>
