@@ -2,6 +2,31 @@
 
 ##　授業内コード
 
+## 11 　月　１９　日
+
+###　 click イベント
+
+```js
+<script>
+      const dancer = document.querySelector(".imgArea img");
+      const dancingBtn = document.querySelector(".dancing");
+      const stopBtn = document.querySelector(".stop");
+      const changeBtn = document.querySelector(".change");
+
+      dancingBtn.addEventListener("click", () => {
+        dancer.setAttribute("class", "dance");
+      });
+
+      stopBtn.addEventListener("click", () => {
+        dancer.removeAttribute("class");
+      });
+
+      changeBtn.addEventListener("click", () => {
+        dancer.setAttribute("src", "images/ballet_woman.png");
+      });
+    </script>
+```
+
 ## 10 　月　１ 9 日
 
 ###　 for 文

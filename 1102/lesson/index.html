@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>カウンター</title>
+    <style>
+      body {
+        width: 100%;
+        height: 100vh;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      const body_element = document.querySelector("body");
+      let counter = 0;
+      const color_array = ["pink", "blue", "orange", "green", "tomato"];
+
+      body_element.addEventListener("click", () => {
+        counter++;
+        console.log(counter);
+        body_element.style.backgroundColor = color_array[counter - 1];
+      });
+    </script>
+  </body>
+</html>
