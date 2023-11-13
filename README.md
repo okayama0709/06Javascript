@@ -2,9 +2,39 @@
 
 ##　授業内コード
 
-## 11 　月　１９　日
+### 11 月 9 　日
 
-###　 click イベント
+##　 if 文
+
+```js
+    <script>
+      const widthsize = window.innerWidth; //現在のブラウザの横幅
+      console.log(widthsize);
+      const left = document.querySelector(".leftZone");
+      const right = document.querySelector(".rightZone");
+
+      document.body.addEventListener("click", (event) => {
+        console.log(event.clientX);
+        const list = document.createElement("li");
+
+        if (widthsize / 2 <= event.clientX) {
+          console.log("右");
+          list.textContent = "右";
+          right.appendChild(list);
+        } else {
+          console.log("左");
+          list.textContent = "左";
+          left.appendChild(list);
+        }
+      });
+    </script>
+```
+
+if 文と要素の追加を行う。appendChild や textContent はまた忘れると思う
+
+### 11 　月　２　日
+
+### click イベント
 
 ```js
 <script>
@@ -32,6 +62,7 @@
 ###　 for 文
 
 ```js
+<script>
 const element = document.querySelector("ul"); //ul取得
 const fruits = ["りんご", "もも", "バナナ"]; //配列を定数に入れる
 console.log(fruits.length); //確認
@@ -43,6 +74,7 @@ for (let i = 0; i < fruits.length; i++) {
   //ul内の最後に追加
   element.appendChild(liLast);
 }
+</script>
 ```
 
 ###　配列
@@ -80,7 +112,7 @@ const name_list = ["松田", "田中", "中山", "山本", "本田"];
     console.dir(lilast); //dirでプロパティを表示
     lilast.textContent = "メロン";
     console.log(lilast);
-  </script>
+  </scrip>
 </body>
 ```
 
