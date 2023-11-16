@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style></style>
+  </head>
+  <body>
+    <div class="images">
+      <img src="path/cat.png" alt="猫の画像" class="img_cat" />
+      <img src="path/dog.png" alt="犬の画像" class="img_dog" />
+      <img src="path/panda.png" alt="パンダの画像" class="img_panda" />
+    </div>
+    <p>
+      <span>トライデントコンピュータ専門学校</span
+      >は<span>愛知県名古屋市</span>にあり、1984年に<span>開校</span>。IT技術者<span>多数育成</span>。現在、情報処理系<span>3学科</span>と<span>CG／ゲーム開発／Webデザイン／CAD</span>などの学科もあり、卒業生の<span>就職実績</span>も豊富です。
+    </p>
+    <script>
+      // 問題１
+      const school = "トライデントコンピュータ専門学校";
+      const course = "Webデザイン学科";
+      console.log(`${school}${course}`);
+      // 問題２
+      const catimg = document.querySelector(".img_cat");
+      console.log(catimg);
+      const catalt = catimg.getAttribute("alt");
+      console.log(catalt);
+      // 問題３
+      const goranger = [
+        "アカレンジャー",
+        "アオレンジャー",
+        "ミドリレンジャー",
+        "キレンジャー",
+        "モモレンジャー",
+      ];
+      console.log(goranger[4]);
+      for (let i = 0; i < goranger.length; i++) {
+        console.log(goranger[i]);
+      }
+      // 問題４
+      const school_list = document.querySelectorAll("span");
+      console.log(school_list);
+      for (let i = 0; i < school_list.length; i++) {
+        school_list[i].addEventListener("click", () => {
+          console.log(school_list[i].innerHTML);
+          school_list[i].classList.toggle("red");
+          school_list[i].classList.toggle("weight");
+          school_list[i].style.color = "red";
+          school_list[i].style.fontWeight = "bold";
+        });
+      }
+
+      // 問題５
+    </script>
+  </body>
+</html>
