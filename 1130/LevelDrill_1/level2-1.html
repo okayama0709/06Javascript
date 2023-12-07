@@ -35,10 +35,13 @@
       //おんたまねぎキムチ牛丼をquerySelectorで取得しコンソールで表示※nth-childを使う。
       const negi = document.querySelector(".gyudons");
       console.log(negi.children[1]);
+      // この下が正解
+      const negi2 = document.querySelector(".negi:nth-child(2)");
+      console.log(negi2);
 
       //高菜明太マヨ牛丼をquerySelectorAll("li")で取得し、コンソールで表示
       const gyudons = document.querySelectorAll(".gyudons");
-      console.log(gyudons.children);
+      console.log(gyudons);
       //class="negi"をquerySelectorAllで取得し、for文で全てをコンソールで表示
     </script>
   </body>

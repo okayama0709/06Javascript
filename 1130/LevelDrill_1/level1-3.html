@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ja">
   <head>
     <meta charset="UTF-8" />
@@ -31,6 +31,14 @@
       console.log(babystarText + ramen);
 
       //上記htmlから各単語を取得し変数に代入し、5種類のラーメンをコンソールに表示させてください。
+      const ramens = document.querySelectorAll("li");
+      console.log(ramens);
+
+      for (let i = 0; i < ramens.length; i++) {
+        const ramenlis = ramens[i];
+        ramenlis[i].textContent = ramen;
+      }
+
       // 醤油らーめん
 
       // 味噌ラーメン

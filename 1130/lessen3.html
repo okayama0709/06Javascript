@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      li {
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <ul>
+      <li>犬</li>
+      <li>猫</li>
+    </ul>
+    <p class="result"></p>
+    <button class="rebutton">ルセラ</button>
+    <button class="onebutton">ワンピース</button>
+    <div class="fnArea"></div>
+
+    <script>
+      const dog = document.querySelector("li:nth-child(1)");
+      const cat = document.querySelector("li:nth-child(2)");
+      const animalList = document.querySelector("ul");
+      const result = document.querySelector(".result");
+
+      //   dog.addEventListener("click", () => {
+      //     result.textContent = "あなたは、犬派です。";
+      //   });
+      //   cat.addEventListener("click", () => {
+      //     result.textContent = "あなたは、猫派です。";
+      //   });
+      for (let i = 0; i < 2; i++) {
+        animalList.children[i].addEventListener("click", () => {
+          const animal = animalList.children[i].textContent;
+        });
+      }
+      const animalCheck = function (animal) {
+        result.textContent = `あなたは${animal}派です`;
+      };
+
+      //   牛丼表示
+      const yoshinoya = function (don, ryo, tuyu, en) {
+        console.log(`${don}の${ryo}、${tuyu}で${en}円`);
+      };
+      yoshinoya("牛丼", "並盛", "つゆだく", 388); //牛丼の並盛、つゆだくで 388 円
+      yoshinoya("豚丼", "大盛", "たまご", 592); //豚丼の大盛、たまごで 592 円
+
+      // 配列
+      const sumCard = function (card) {
+        console.log(card);
+        let total = 0;
+        for (let i = 0; i < card.length; i++) {
+          total += card[i]; //toral = total + card[i]
+        }
+        console.log(total);
+      };
+      const card_list = [1, 2, 3, 4];
+      sumCard(card_list); //10
+
+      const member_list = [
+        "チェウォン",
+        "サクラ",
+        "ユンジン",
+        "カズハ",
+        "ウンチェ",
+      ];
+      const mugiwara_list = [
+        "モンキー・D・ルフィ",
+        "ナミ",
+        "ロロノア・ゾロ",
+        "ヴィンスモーク・サンジ",
+        "ウソップ",
+        "トニートニー・チョッパー",
+        "ニコ・ロビン",
+        "フランキー",
+        "ブルック",
+        "ジンベエ",
+      ];
+      const memberArea = document.querySelector(".fnArea");
+
+      const memberPush = function (members) {
+        console.log(members);
+        const ulElm = document.createElement("ul");
+
+        for (let i = 0; i < members.length; i++) {
+          const liElm = document.createElement("li");
+          liElm.textContent = members[i];
+          ulElm.appendChild(liElm);
+        }
+        memberArea.innerHTML = "";
+        memberArea.appendChild(ulElm);
+      };
+
+      const button = document.querySelector(".rebutton");
+
+      button.addEventListener("click", () => {
+        memberPush(member_list);
+      });
+      const onebutton = document.querySelector(".onebutton");
+
+      onebutton.addEventListener("click", () => {
+        memberPush(mugiwara_list);
+      });
+
+      // 引数
+
+      const addition = function (a, b) {
+        const c = a + b;
+        console.log(c);
+      };
+      //関数の実行
+
+      addition(10, 11);
+      addition(30, "6");
+
+      // 戻り値のある関数の定義
+      const addition2 = function (a, b) {
+        const c = a * b;
+        return c; //戻り値
+      };
+
+      // 関数の実行
+      const result2 = addition2(5, 5);
+      console.log(result2);
+    </script>
+  </body>
+</html>
