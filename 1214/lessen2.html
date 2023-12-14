@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 関数式１
+      const concatenateSpace = function (lastName, firstName) {
+        return lastName + " " + firstName;
+      };
+      // 関数式２
+      const useConcatenate = function (name, func) {
+        let concatName = func(name[0], name[1]);
+        console.log("結合結果：" + concatName);
+      };
+
+      let nameParam = ["岡山", "祐斗"];
+
+      // 関数式２の実行(引数１＝配列,引数２＝関数名)
+      useConcatenate(nameParam, concatenateSpace);
+
+      //結合結果：中田 雄二
+
+      //   関数式１
+      const testFunc = function (func) {
+        console.log("testFuncが実行されました");
+        // 関数の２秒後実行
+        setTimeout(function () {
+          // 関数の実行
+          func();
+          //   ２０００ｍｍ秒
+        }, 2000);
+      };
+      //  関数式２
+      const callback = function () {
+        console.log("callbackが実行されました");
+      };
+      // 関数の実行（関数名）
+      testFunc(callback);
+    </script>
+  </body>
+</html>

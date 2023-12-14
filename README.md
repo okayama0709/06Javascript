@@ -2,11 +2,78 @@
 
 ##　授業内コード
 
+### 11 　月 16 日
+
+```js
+// 条件分岐
+const n1 = 1;
+const n2 = 2;
+
+// ◯　または　◯　どちらかが合致していれば”true”になる
+if (n1 === 1 || n2 === 1) {
+  console.log(true);
+} else {
+  console.log(false);
+}
+// 　◯　かつ　◯　どちらも合致していれば"true"になる
+if (n1 === 1 && n2 === 1) {
+  console.log(true);
+} else {
+  console.log(false);
+}
+if (n1 === 1 && n2 === 2) {
+  console.log(true);
+} else {
+  console.log(false);
+}
+
+//-imgのaltの名前を持ってくる
+// アトリビュートはわりと利用価値あり？ｓｒｃで主
+const catimg = document.querySelector(".img_cat");
+console.log(catimg);
+const catalt = catimg.getAttribute("alt");
+console.log(catalt);
+
+//-配列の表示とクッリクしたときにクラスとスタイル変更
+const school_list = document.querySelectorAll("span");
+console.log(school_list);
+for (let i = 0; i < school_list.length; i++) {
+  school_list[i].addEventListener("click", () => {
+    console.log(school_list[i].innerHTML);
+    school_list[i].classList.toggle("red");
+    school_list[i].classList.toggle("weight");
+    school_list[i].style.color = "red";
+    school_list[i].style.fontWeight = "bold";
+  });
+}
+
+//-
+//画像ファイル名は、配列から取得します。
+const fujiImg_list = ["mt-fuji001.jpg", "mt-fuji002.jpg", "mt-fuji003.jpg"];
+
+//ここに処理を書きます。
+const imageArea = document.querySelector("#mt-fuji");
+const btns = document.querySelectorAll(".image-fuji");
+const preBtn = document.querySelector(".pre");
+const nextBtn = document.querySelector(".next");
+let count = 0;
+
+for (let i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function () {
+    imageArea.setAttribute("src", `images/${fujiImg_list[i]}`);
+    count = i;
+  });
+}
+```
+
+条件分岐で使うかもしれない。メモ
+
 ### 11 月 9 　日
 
 ##　 if 文
 
 ```js
+//クリックイベント
     <script>
       const widthsize = window.innerWidth; //現在のブラウザの横幅
       console.log(widthsize);
@@ -31,12 +98,14 @@
 ```
 
 if 文と要素の追加を行う。appendChild や textContent はまた忘れると思う
+今回の場合は list（右のテキストが入った li [element]）を right に追加している。
 
 ### 11 　月　２　日
 
 ### click イベント
 
 ```js
+  // クラスの追加
 <script>
       const dancer = document.querySelector(".imgArea img");
       const dancingBtn = document.querySelector(".dancing");

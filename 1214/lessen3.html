@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>なにこれ</p>
+    <script>
+      //従来の関数式
+      const dog = function () {
+        return "わんわん";
+      };
+
+      //関数の定義
+      function dog2() {
+        return "バウバウ";
+      }
+      //関数dogを実行
+      console.log(dog()); //わんわん
+      console.log(dog2());
+
+      //アロー関数
+      const cat = () => {
+        return "にゃーにゃー";
+      };
+      //関数catの実行
+      console.log(cat()); //にゃーにゃー
+
+      //泣き方を決めたい アロー関数＋引数
+      const animal = (voice) => {
+        return voice;
+      };
+      //関数animalの実行
+      //ミャーミャー
+      console.log(animal("みゃあみゃあ"));
+
+      const thisElm = document.querySelector("p");
+      console.log(thisElm);
+
+      thisElm.addEventListener("click", (e) => {
+        // アロー関数でthisは使えない undefinedがでる
+        // console.log(this.textContent);
+
+        console.log(e.target.textContent);
+      });
+    </script>
+  </body>
+</html>
