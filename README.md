@@ -2,6 +2,234 @@
 
 ##　授業内コード
 
+### 12 月 14 日
+
+# コールバック関数
+
+```js
+// 関数式１
+const concatenateSpace = function (lastName, firstName) {
+  return lastName + " " + firstName;
+};
+// 関数式２
+const useConcatenate = function (name, func) {
+  let concatName = func(name[0], name[1]);
+  console.log("結合結果：" + concatName);
+};
+
+let nameParam = ["岡山", "祐斗"];
+
+// 関数式２の実行(引数１＝配列,引数２＝関数名)
+useConcatenate(nameParam, concatenateSpace);
+
+//結合結果：中田 雄二
+
+//   関数式１
+const testFunc = function (func) {
+  console.log("testFuncが実行されました");
+  // 関数の２秒後実行
+  setTimeout(function () {
+    // 関数の実行
+    func();
+    //   ２０００ｍｍ秒
+  }, 2000);
+};
+//  関数式２
+const callback = function () {
+  console.log("callbackが実行されました");
+};
+// 関数の実行（関数名）
+testFunc(callback);
+```
+
+# 変数応用
+
+```html
+<body>
+  <h1>動物のスピード</h1>
+  <div class="dash">
+    <p>START</p>
+    <p>GOAL</p>
+  </div>
+  <ul>
+    <li class="dog">イ　ヌ<span>🐕</span></li>
+    <li class="cat">ネ　コ<span>🐈</span></li>
+    <li class="horse">ウ　マ<span>🐎</span></li>
+    <li class="pig">ブ　タ<span>🐖</span></li>
+    <li class="gorilla">ゴリラ<span>🦍</span></li>
+  </ul>
+  <button class="startBtn">よーい、ドン！</button>
+  <script>
+    const startBtn = document.querySelector(".startBtn");
+    const animalSpeed = [3, 4, 1, 3, 2];
+    const animals = document.querySelectorAll("li span");
+    console.log(animals);
+
+    // ここに関数animalsRunを作成してください。
+    const animalsRun = function (animal, speed) {
+      for (let i = 0; i < animal.length; i++) {
+        animal[i].style.transitionDuration = speed[i] + "s";
+        animal[i].classList.add("run");
+      }
+    };
+
+    startBtn.addEventListener("click", function () {
+      animalsRun(animals, animalSpeed);
+    });
+  </script>
+</body>
+```
+
+### 12 月 07 日
+
+#　グローバル変数とローカル変数
+
+```js
+const globalData = "hogehoge"; //グローバル変数
+const foobaa = function () {
+  const globalData = "fugafuga"; //ローカル変数なんだけど、グローバルと変数名が同じ
+  console.log(globalData); //fugafuga＊ローカル変数はグローバルよりも優先されるかつ、外にはもれない
+};
+console.log(globalData); //hogehoge＊グローバル変数
+//   関数の中だけでなく、｛｝（ブロック）内でしか使えません。
+// 外に出したい場合は、return（戻り値）を使う。
+```
+
+#　戻り値
+
+```html
+<body>
+  <p>ケーキ（450円）の税込み価格</p>
+  <button class="takeOut">テイクアウト</button>
+  <button class="eatIn">イートイン</button>
+  <p>税込み価格は、<span class="taxIn"></span>円です。</p>
+</body>
+```
+
+```js
+const cake = 450;
+const taxIn = document.querySelector(".taxIn");
+const takeOutBtn = document.querySelector(".takeOut");
+const eatIn = document.querySelector(".eatIn");
+
+const taxPrice = function (cake, tax) {
+  const result = cake + cake * tax;
+  return result;
+};
+
+takeOutBtn.addEventListener("click", function () {
+  const price = taxPrice(cake, 0.08);
+  taxIn.innerHTML = price;
+});
+
+eatIn.addEventListener("click", function () {
+  const price = taxPrice(cake, 0.1);
+  taxIn.innerHTML = price;
+});
+```
+
+### 11 月 30 日
+
+# 関数の定義
+
+```js
+//例文１
+//関数の定義
+function aisatus(message) {
+  console.log(message);
+}
+//   関数の実行
+aisatus("おはようございます");
+console.log("１回目が呼び出し");
+aisatus("こんにちは");
+console.log("２回目の呼び出し");
+aisatus("こんばんは");
+//   関数の定義
+function dogName() {
+  console.log("私のうちの犬の名前は、ポチです。");
+}
+// 関数の実行
+dogName();
+catName();
+//   関数定義
+function catName() {
+  console.log("私のうちの猫の名前は、たまです。");
+}
+
+//例文２
+function kuku(num) {
+  let counter;
+  for (let i = 0; i < 10; i++) {
+    console.log(`${num} × ${i + 1} = ${num * (i + 1)}`);
+  }
+}
+kuku(5);
+// 関数定義
+function showMessage(message) {
+  console.log(message);
+}
+//   関数式
+const showMessage2 = function (message) {
+  console.log("メッセージ２");
+};
+//   イベントで関数式
+document.body.addEventListener("click", function () {
+  showMessage("こんにちは");
+});
+```
+
+例３
+
+```html
+<body>
+  <p class="result"></p>
+  <button class="rebutton">ルセラ</button>
+  <button class="onebutton">ワンピース</button>
+  <div class="fnArea"></div>
+</body>
+```
+
+```js
+const member_list = ["チェウォン", "サクラ", "ユンジン", "カズハ", "ウンチェ"];
+const mugiwara_list = [
+  "モンキー・D・ルフィ",
+  "ナミ",
+  "ロロノア・ゾロ",
+  "ヴィンスモーク・サンジ",
+  "ウソップ",
+  "トニートニー・チョッパー",
+  "ニコ・ロビン",
+  "フランキー",
+  "ブルック",
+  "ジンベエ",
+];
+const memberArea = document.querySelector(".fnArea");
+
+const memberPush = function (members) {
+  console.log(members);
+  const ulElm = document.createElement("ul");
+
+  for (let i = 0; i < members.length; i++) {
+    const liElm = document.createElement("li");
+    liElm.textContent = members[i];
+    ulElm.appendChild(liElm);
+  }
+  memberArea.innerHTML = "";
+  memberArea.appendChild(ulElm);
+};
+
+const button = document.querySelector(".rebutton");
+
+button.addEventListener("click", () => {
+  memberPush(member_list);
+});
+const onebutton = document.querySelector(".onebutton");
+
+onebutton.addEventListener("click", () => {
+  memberPush(mugiwara_list);
+});
+```
+
 ### 11 　月 16 日
 
 ```js
