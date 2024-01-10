@@ -49,6 +49,12 @@
       });
 
       // for文で書ければ、書いてください。
+      for (let i = 0; i < box.length; i++) {
+        box[i].addEventListener("click", () => {
+          const color = box[i].getAttribute("id");
+          document.body.style.backgroundColor = color;
+        });
+      }
     </script>
   </body>
 </html>

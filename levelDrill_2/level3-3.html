@@ -61,6 +61,22 @@
       });
 
       //他のメンバーのマウスオーバーイベントをプログラムしてください。
+      const bef = document.querySelectorAll(".befirst li");
+      const menImg = [
+        "ryuhei.jpg",
+        "shunto.jpg",
+        "manato.jpg",
+        "ryoki.jpg",
+        "sota.jpg",
+        "leo.jpg",
+        "junon.jpg",
+      ];
+
+      for (let i = 0; i < bef.length; i++) {
+        bef[i].addEventListener("mouseover", () => {
+          member.innerHTML = `<img src="images/${menImg[i]}" alt="${bef[i].textContent}">`;
+        });
+      }
     </script>
   </body>
 </html>
