@@ -35,6 +35,23 @@
 
       const numArea = document.querySelectorAll(".slot li");
       const btn = document.querySelectorAll("button");
+      let randomNum = Math.floor(Math.random() * 8);
+
+      for (let i = 0; i < btn.length; i++) {
+        btn[i].addEventListener("click", () => {
+          let randomNum = Math.floor(Math.random() * 8);
+          numArea[i].textContent = randomNum;
+          // フィーバー条件のチェック
+          if (
+            numArea[0].textContent === numArea[1].textContent &&
+            numArea[1].textContent === numArea[2].textContent
+          ) {
+            console.log("フィーバー");
+          } else {
+            // フィーバーでない場合の処理（何もしない場合はこの部分は不要）
+          }
+        });
+      }
     </script>
   </body>
 </html>
