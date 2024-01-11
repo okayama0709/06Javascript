@@ -12,6 +12,16 @@
       div {
         margin: 10px 0;
       }
+      input[type="number"] {
+        width: 300px;
+        height: 50px;
+        font-size: 30px;
+      }
+      button {
+        width: 200px;
+        height: 40px;
+        font-size: 20px;
+      }
     </style>
   </head>
   <body>
@@ -28,13 +38,38 @@
     <script>
       //下記の変数を使って、生まれ年を入力すると、干支が表示されるようにしてください。
       //関数etoで作ってください。
+      const etoLi = [
+        "子（ねずみ）",
+        "丑（うし）",
+        "寅（とら）",
+        "卯（うさぎ）",
+        "辰（たつ）",
+        "巳（へび）",
+        "午（うま）",
+        "未（ひつじ）",
+        "申（さる）",
+        "酉（とり）",
+        "戌（いぬ）",
+        "亥（いのしし）",
+      ];
+
       //2000年は「辰」でした。
       const btn = document.querySelector("button");
 
       /*formから値を取得するには、
-      const year = document.querySelector("#year").value;
-      を使います。*/
+            const year = document.querySelector("#year").value;
+            を使います。*/
+      // 干支を計算して結果を表示する関数
+      function calculateEto() {
+        const year = document.querySelector("#year").value;
+        const etoIndex = (year - 1900) % 12; // 2000年は「辰」
+        const etoResult = etoLi[etoIndex];
+        document.querySelector("h1").textContent = etoResult;
+      }
 
+      // ボタンにクリックイベントリスナーを追加
+      const btns = document.querySelector("button");
+      btn.addEventListener("click", calculateEto);
       //関数etoの実行
       eto();
     </script>

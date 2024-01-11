@@ -2,6 +2,194 @@
 
 ##　授業内コード
 
+### 1 月 10 日
+
+## オブジェクト
+
+```html
+<body>
+  <script>
+    const championshipWinners = {
+      y2018: "大阪桐蔭",
+      y2019: "履正社",
+      y2020: "新型コロナ感染拡大の影響で中止",
+      y2021: "智弁和歌山",
+      y2022: "仙台育英",
+      y2023: "慶応",
+    };
+    const selectedChampions = {
+      2018: "大阪桐蔭",
+      2019: "東邦",
+      2020: "新型コロナ感染拡大の影響で中止",
+      2021: "東海大相模",
+      2022: "大阪桐蔭",
+      2023: "山梨学院",
+    };
+    console.log(championshipWinners);
+    console.log(
+      selectedChampions[2018],
+      selectedChampions[2019],
+      selectedChampions[2020]
+    );
+
+    const hashira_list = {
+      water: "鱗滝左近次",
+      worm: "胡蝶しのぶ",
+      flame: "煉獄杏寿郎",
+      sound: "宇髄天元",
+      love: "甘露寺蜜璃",
+    };
+    hashira_list.rook = "悲鳴嶼行冥";
+    hashira_list.haze = "時透無一郎";
+    hashira_list.snake = "伊黒小芭内";
+    hashira_list.wind = "不死川実弥";
+    console.log(hashira_list);
+    hashira_list["water"] = "冨岡義勇";
+    console.log(hashira_list["water"]);
+  </script>
+</body>
+```
+
+```html
+<script>
+  const person = {
+    name: "",
+    age: 0,
+    information: function () {
+      return "名前:" + this.name + "\n年齢" + this.age;
+    },
+  };
+
+  person.name = "山田太郎";
+  person.age = "20";
+
+  console.log(person.name, person.age);
+
+  const myCar_list = {}; //空のオブジェクトを作成
+  myCar_list.make = "Ford";
+  myCar_list.model = "Mustang";
+  myCar_list.year = 1969;
+  console.log(myCar_list);
+  //{make: 'Ford', model: 'Mustang', year: 1969}
+  console.log(myCar_list.model, myCar_list.year);
+
+  myCar_list["2021"] = "51年"; //ブランケットで設定
+
+  console.log(myCar_list);
+  //   objectの配列は保証されない。配列の一番前にくる。
+  console.log(myCar_list["2021"]);
+  //   オブジェクト登録
+  const dict = { apple: "林檎", banana: "バナナ", grape: "ぶどう" };
+  //   新規登録
+  dict.orenge = "オレンジ";
+
+  //   キー削除
+  dict.apple = "りんご";
+  console.log(dict);
+</script>
+```
+
+## フォームの使用
+
+```html
+<body>
+  <h1>名前を入力</h1>
+  <p>あなたの名前を入力してボタンを押してください。</p>
+  <form>
+    <input type="text" id="name" placeholder="例）山田太郎" /><br />
+    <input type="submit" value="ボタン" id="btn" />
+  </form>
+  <script>
+    // ボタンのオブジェクトを取得する
+    const btn = document.querySelector("#btn");
+
+    // ボタンの処理を記述する
+    btn.addEventListener("click", function () {
+      const input = document.querySelector("#name").value;
+      if (input.value === "") {
+        window.alert("名前を入力してください。");
+      } else {
+        window.alert("あなたのお名前；" + input);
+      }
+    });
+  </script>
+</body>
+```
+
+### 12 月 21 日
+
+## スライドショーのギミック
+
+```html
+<body>
+    <div class="slide">
+      <img src="images/mt-fuji001.jpg" alt="富士山1" />
+      <img src="images/mt-fuji002.jpg" alt="富士山2" />
+      <img src="images/mt-fuji003.jpg" alt="富士山3" />
+      <img src="images/mt-fuji004.jpg" alt="富士山4" />
+      <img src="images/mt-fuji005.jpg" alt="富士山4" />
+      <img src="images/mt-fuji006.jpg" alt="富士山4" />
+    </div>
+    <div class="buttons">
+      <button class="leftBtn">左へ</button>
+      <button class="rightBtn">右へ</button>
+    </div>
+    <script src="script/script.js"></script>
+  </body>
+</html>
+```
+
+```js
+//初期化
+const slide = document.querySelector(".slide");
+const imgs = document.querySelectorAll(".slide img"); //グローバル変数
+
+console.log(imgs);
+//四枚目の画像がほしい
+console.log(imgs[imgs.length - 1]);
+//div="slide"の中に最後の画像[imgs.length -1]を最初の画像[0]の前
+//insertBeforeはappendChildの逆、前に入れる
+slide.insertBefore(imgs[imgs.length - 1], imgs[0]);
+
+//btn
+const leftBtn = document.querySelector(".leftBtn");
+const rightBtn = document.querySelector(".rightBtn");
+
+// 左へボタン
+const leftSlider = function () {
+  //ローカル変数
+  const slideImgs = document.querySelectorAll(".slide img");
+
+  //左側の余白な画像を、最後に移動
+  slide.appendChild(slideImgs[0]);
+
+  //入っているstyle属性を削除
+  slideImgs[0].removeAttribute("style");
+};
+
+// 関数の実行
+leftBtn.addEventListener("click", leftSlider);
+
+const rightSlider = function () {
+  const slideImgs = document.querySelectorAll(".slide img");
+  slideImgs[1].removeAttribute("style");
+  //   slideImgs[1].style.marginLeft = "";　この書き方でも通る空白で初期値に
+
+  slideImgs[0].style.marginLeft = "0";
+
+  slide.insertBefore(slideImgs[slideImgs.length - 1], slideImgs[0]);
+};
+
+rightBtn.addEventListener("click", rightSlider);
+
+// 2秒で切り替わる
+const slideShow = function (func) {
+  setInterval(func, 2000);
+};
+
+slideShow(leftSlider);
+```
+
 ### 12 月 14 日
 
 # コールバック関数

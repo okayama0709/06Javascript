@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>九九のフォーム</h1>
+    <form action="">
+      <p>九九の段を入力してください</p>
+      <input type="text" name="kuku" placeholder="例）3" class="num" /> <br />
+      <input type="submit" value="送信する" class="btn" />
+    </form>
+    <h2>結果</h2>
+    <ul class="kuku"></ul>
+
+    <script>
+      const btn = document.querySelector(".btn");
+      const result = document.querySelector(".kuku");
+
+      btn.addEventListener("click", (event) => {
+        event.preventDefault();
+        // inputの数値は文字列型で送信される
+        const input = document.querySelector(".num");
+        for (let i = 1; i < 10; i++) {
+          console.log(input.value + "x" + [i] + "=" + input.value * i);
+          const liEolm = document.createElement("li");
+          liEolm.textContent = input.value + "x" + [i] + "=" + input.value * i;
+          result.appendChild(liEolm);
+        }
+      });
+    </script>
+  </body>
+</html>

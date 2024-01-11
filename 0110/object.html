@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const person = {
+        name: "",
+        age: 0,
+        information: function () {
+          return "名前:" + this.name + "\n年齢" + this.age;
+        },
+      };
+
+      person.name = "山田太郎";
+      person.age = "20";
+
+      console.log(person.name, person.age);
+
+      const myCar_list = {}; //空のオブジェクトを作成
+      myCar_list.make = "Ford";
+      myCar_list.model = "Mustang";
+      myCar_list.year = 1969;
+      console.log(myCar_list);
+      //{make: 'Ford', model: 'Mustang', year: 1969}
+      console.log(myCar_list.model, myCar_list.year);
+
+      myCar_list["2021"] = "51年"; //ブランケットで設定
+
+      console.log(myCar_list);
+      //   objectの配列は保証されない
+      console.log(myCar_list["2021"]);
+      //   登録
+      const dict = { apple: "林檎", banana: "バナナ", grape: "ぶどう" };
+      //   新規登録
+      dict.orenge = "オレンジ";
+
+      //   削除
+      dict.apple = "りんご";
+      console.log(dict);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>名前を入力</h1>
+    <p>あなたの名前を入力してボタンを押してください。</p>
+    <form>
+      <input type="text" id="name" placeholder="例）山田太郎" /><br />
+      <input type="submit" value="ボタン" id="btn" />
+    </form>
+    <script>
+      // ボタンのオブジェクトを取得する
+      const btn = document.querySelector("#btn");
+
+      // ボタンの処理を記述する
+      btn.addEventListener("click", function () {
+        const input = document.querySelector("#name").value;
+        if (input.value === "") {
+          window.alert("名前を入力してください。");
+        } else {
+          window.alert("あなたのお名前；" + input);
+        }
+      });
+    </script>
+  </body>
+</html>
