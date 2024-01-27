@@ -6,6 +6,135 @@
 
 ## オブジェクトの配列
 
+# for of 　と　 for in
+
+```html
+<script>
+  // story:話, title:題名, image:サムネイル名, id:YouTube動画id
+  const chiikawas = [
+    {
+      story: 1,
+      title: "かためのプリン／ホットケーキ",
+      image: "chiikawa-001.webp",
+      id: "pbQQAwSQUX4",
+    },
+    {
+      story: 2,
+      title: "スフィンクス／ほんものだ",
+      image: "chiikawa-002.webp",
+      id: "i6d3K6ln-d4",
+    },
+    {
+      story: 3,
+      title: "イカ／パイシチュー",
+      image: "chiikawa-003.webp",
+      id: "a7cwqxmn7rY",
+    },
+    {
+      story: 4,
+      title: "ブロッコリー／ピザまん",
+      image: "chiikawa-004.webp",
+      id: "l9IAr7WY-Xk",
+    },
+    {
+      story: 5,
+      title: "チャリメラ／チャルメラ",
+      image: "chiikawa-005.webp",
+      id: "cE8wVmwY7VY",
+    },
+  ];
+</script>
+
+<script>
+  const contents = document.querySelector(".contents");
+  for (let story of chiikawas) {
+    console.log(story);
+    const dl = document.createElement("dl");
+    for (let key in story) {
+      console.log(story[key]);
+      const dt = `<dt><span>第${story["story"]}話</span><span>${story["title"]}</span></dt>`;
+      dl.innerHTML = dt;
+      const dd = document.createElement("dd");
+      const a = document.createElement("a");
+      a.setAttribute("href", "https://www.youtube.com/watch?v=" + story["id"]);
+      a.innerHTML = `<img src="./images/${story["image"]}">`;
+
+      dd.appendChild(a);
+      dl.appendChild(dd);
+      contents.appendChild(dl);
+    }
+  }
+</script>
+```
+
+# リテラル解説
+
+```html
+<script>
+  const npb2023 = [
+    { Team: "阪神タイガース", Wins: 85, Loss: 53, Ties: 5, Rate: 0.616 },
+    { Team: "広島東洋カープ", Wins: 74, Loss: 65, Ties: 4, Rate: 0.532 },
+    {
+      Team: "横浜DeNAベイスターズ",
+      Wins: 74,
+      Loss: 66,
+      Ties: 3,
+      Rate: 0.529,
+    },
+    { Team: "読売ジャイアンツ", Wins: 71, Loss: 70, Ties: 2, Rate: 0.504 },
+    {
+      Team: "東京ヤクルトスワローズ",
+      Wins: 57,
+      Loss: 83,
+      Ties: 3,
+      Rate: 0.407,
+    },
+    { Team: "中日ドラゴンズ", Wins: 56, Loss: 82, Ties: 5, Rate: 0.406 },
+  ];
+
+  // 下記の　json const npb を for_of 文　for_in　文えお使って全ての要素を表示してください。
+  // 配列を処理
+  // []配列リテラル、｛｝オブジェクとリテラル、””文字型リテラル、``テンプレートリテラル
+
+  for (let team of npb2023) {
+    console.log(team);
+    for (let key in team) {
+      console.log(team[key]);
+    }
+  }
+</script>
+```
+
+# 時間
+
+```html
+<script>
+  const now = new Date(); //DAteメソッド
+  console.log(now);
+
+  const day = ["日", "月", "火", "水", "木", "金", "土"];
+  console.log(day[now.getDay()]);
+
+  const promotionDay = new Date("2024-2-8");
+  console.log(promotionDay - now); //ミリ秒
+  const difference = promotionDay - now;
+  const seconds = difference / 1000;
+  console.log(seconds); //秒
+
+  const minits = seconds / 60;
+  console.log(minits); //分
+
+  const hours = minits / 60;
+  console.log(hours); //時間
+
+  const days = hours / 24;
+  console.log(days); //日
+
+  //  ミリ秒〜日
+  //const days= difference/1000/60/60/24
+</script>
+```
+
 ### 1 月 10 日
 
 ## オブジェクト
